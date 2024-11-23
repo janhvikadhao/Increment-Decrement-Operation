@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin-top: 30px;
+    }
+    .shopping-card-container {
+        height: 370px;
+        width: 255px;
+        padding: 12px;
+        margin: 30px 20px;
+        border: 0.5px solid gray;
+        border-radius: 15px;
+        box-shadow: 1px 1px 15px 2px #b7b7b8;
+        cursor: pointer;
+        background-color: #fff;
+    }
+    .shopping-card-price {
+        font-size: 20px;
+        font-weight: bold;
+        margin: 10px;
+        text-align: center;
+    }
+
+    .shopping-card-title {
+
+        font-size: 22px;
+        font-weight: bold;
+        margin: 10px;
+        text-align: center;
+    }
+    .shopping-card-ratings {
+        height: 15px;
+        width: 70px;
+        display: block;
+        margin: 0px auto;
+    }
+
+    .shopping-card-descrip {
+        margin-left: 10px;
+        margin: 12px 0;
+        font-size: 15px;
+        text-align: center;
+    }
+    .shopping-card-btn {
+        background-color: white;
+        color: black;
+        margin: 7px 10px;
+        padding: 5px 10px;
+        width: 100px;
+        text-align: center;
+        border-radius: 20px;
+        cursor: pointer;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif 40px;
+        font-weight: bold;
+        border: 1px solid black;
+    }
+
+    .shopping-card-btn:hover {
+        background-color: black;
+        color: #fff;
+        border: 1px solid black;
+    }
+
+    .img {
+        height: 180px;
+        width: 250px;
+    }
+
+    .img-container {
+        margin: 20px auto;
+    }
+    .h2 {
+        text-align: center;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 35px;
+        margin: 40px auto;
+        color: #020a44;
+        }
+    .icon{
+        height: 20px;
+        width: 20px;
+        margin: 0px 10px;
+    }    
+    .quantity-btn-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+</style>
+<body>
+    <h2 class="h2">Roses</h2>
+
+    <div class="cards">
+        <div class="shopping-card-container">
+            <div class="img-container">
+                <img class="img" src="../images/ros1-removebg-preview.png" />
+            </div>
+
+            <p class="shopping-card-price"> ₹20kg/-</p>
+
+            <p class="shopping-card-title">Pink Rose Flower</p>
+
+            <div class="quantity-btn-container">
+                <img src="../images/close.png" class="icon"  onclick="decrement()"/>
+                
+                <span id="quantity">1</span>
+                <img src="../images/add.png" class="icon" onclick="increment()"/>
+                    
+            </div>
+    
+
+            <button class="shopping-card-btn">Add to cart</button>
+            <button class="shopping-card-btn">Buy now</button>
+        </div>
+
+        <div class="shopping-card-container">
+            <div class="img-container">
+                <img class="img" src="../images/ros5-removebg-preview.png" />
+            </div>
+
+            <p class="shopping-card-price"> ₹20/-</p>
+
+            <p class="shopping-card-title">Red Rose Flower</p>
+
+            <div class="quantity-btn-container">
+                <img src="../images/close.png" class="icon"  onclick="decrement1()"/>
+                
+                <span id="quantity1">1</span>
+                <img src="../images/add.png" class="icon" onclick="increment1()"/>
+                    
+            </div>
+
+            <button class="shopping-card-btn">Add to cart</button>
+            <button class="shopping-card-btn">Buy now</button>
+        </div>
+
+        <div class="shopping-card-container">
+            <div class="img-container">
+                <img class="img" src="../images/ros3.png" />
+            </div>
+
+            <p class="shopping-card-price"> ₹30/-</p>
+
+            <p class="shopping-card-title">White Rose</p>
+
+            <div class="quantity-btn-container">
+                <img src="../images/close.png" class="icon"  onclick="decrement2()"/>
+                
+                <span id="quantity2">1</span>
+                <img src="../images/add.png" class="icon" onclick="increment2()"/>
+                    
+            </div>
+
+            <button class="shopping-card-btn">Add to cart</button>
+            <button class="shopping-card-btn">Buy now</button>
+        </div>
+    </div>
+
+    <script>
+      const quantityElement = document.getElementById('quantity');
+      let quantity= parseInt(quantityElement.innerText);
+      const quantityElement1 = document.getElementById('quantity1');
+      let quantity1= parseInt(quantityElement1.innerText);
+      const quantityElement2 = document.getElementById('quantity2');
+      let quantity2= parseInt(quantityElement2.innerText);
+
+
+
+        function increment() {
+            const quantityElement = document.getElementById('quantity');
+            let quantity= parseInt(quantityElement.innerText);
+            quantityElement.innerText = ++quantity;
+        }
+        function increment1(){
+            const quantityElement1 = document.getElementById('quantity1');
+      let quantity1= parseInt(quantityElement1.innerText);
+            // let quantity1= parseInt(quantityElement1.innerText);
+            quantityElement1.innerText = ++quantity1;
+        }
+        function increment2(){
+            const quantityElement2 = document.getElementById('quantity2');
+      let quantity2= parseInt(quantityElement2.innerText);
+
+            // quantityElement2.innerText = ++quantity2;
+            quantityElement2.innerText = ++quantity2;
+
+        }
+    
+        function decrement() {
+            
+            if (quantity > 0) { 
+          
+            const quantityElement = document.getElementById('quantity');
+            let quantity= parseInt(quantityElement.innerText);
+                
+                quantityElement.innerText = quantity - 1;
+        }}
+        function decrement1(){
+            if (quantity > 0) {
+                const quantityElement1 = document.getElementById('quantity1');
+                let quantity1= parseInt(quantityElement1.innerText);
+                quantityElement1.innerText = quantity1 - 1;
+        }}
+        function decrement2(){
+            if (quantity > 0) {
+                const quantityElement2 = document.getElementById('quantity2');
+      let quantity2= parseInt(quantityElement2.innerText);
+
+                quantityElement2.innerText = quantity2 - 1;
+            }}
+        
+
+       
+    </script>
+    
+</body>
+</html>
